@@ -1,0 +1,6 @@
+class Config:
+    SQLALCHEMY_DATABASE_URI = "sqlite:///meditations.db"
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+    SECRET_KEY = "g6b2fr33rdb92367"
+    TELEGRAM_BOT_TOKEN = "7677397633:AAFH9AsIUywE4GDUt2a0N9_hLJ27JlkU0pM"
+   

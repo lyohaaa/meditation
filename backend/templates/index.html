@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meditaciya</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Учёт медитаций</h1>
+    <button id="logButton">Записать медитацию</button>
+    <button id="progressButton">Посмотреть прогресс</button>
+
+    <div id="progressControls" style="display: none; margin-top: 15px;">
+  <button id="sessionListBtn" class="btn">Список сеансов</button>
+  <button id="statsBtn" class="btn">Статистика</button>
+</div>
+
+
+<div id="sessionListContainer"class="session-list" style="display: none;">
+  <div id="progressList"><!-- Сюда выводятся сеансы --></div>
+</div>
+
+<!-- График и гистограмма -->
+<div id="chartsContainer" class="charts-container" style="display: none;">
+    <canvas id="lineChart"></canvas>
+    <canvas id="barChart"></canvas>
+</div>
+
+
+
+ <!-- <div id="progressList"></div>Здесь будет список медитаций -->
+
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+
+<div id="meditationTimer" style="display:none; margin-top: 20px;">
+    <h3>Медитация идёт...</h3>
+    <p id="timerDisplay">10:00</p>
+</div>
+
+<div id="moodModal" class="modal" style="display: none;">
+  <div class="modal-content">
+    <h3>Опишите своё состояние после медитации</h3>
+
+    <label for="moodText">Что вы чувствуете?</label><br>
+    <textarea id="moodText" maxlength="200" rows="4" placeholder="Введите описание (до 200 символов)"></textarea>
+
+    <p>Насколько вы спокойны?</p>
+    <div class="mood-option">
+      <label><input type="radio" name="moodScore" value="5"> Совершенно спокоен</label><br>
+      <label><input type="radio" name="moodScore" value="4"> Спокоен</label><br>
+      <label><input type="radio" name="moodScore" value="3"> Нейтрально</label><br>
+      <label><input type="radio" name="moodScore" value="2"> Напряжён</label><br>
+      <label><input type="radio" name="moodScore" value="1"> Очень взволнован</label>
+    </div>
+
+    <div style="margin-top: 15px;">
+      <button id="submitMood" class="btn">ОК</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
