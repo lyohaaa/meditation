@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Медитация
     logButton.addEventListener("click", function () {
         const userId = "671510858";
-        const duration = 1;
+        const duration = 10;
         let secondsLeft = duration * 60;
 
         document.getElementById("sessionListContainer").style.display = "none";
